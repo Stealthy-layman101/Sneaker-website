@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 /">
+    <title>Sneaker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header class="head">
+        <nav class="navbar">
+            <ul>
+                <li><p>Collections</p></li>
+                <li><p>Men</p></li>
+                <li><p>Women</p></li>
+                <li><p>About</p></li>
+                <li><p>Contact</p></li>
+            </ul>
+        </nav>
+        
+        <div class="menu-icon"></div>
+
+        <div class="sneaker_logo">
+        <img class="logo" src="logo.svg" alt="logo">
+    </div>
+        
+        <div class="logo">
+            <img src="Images/icon-cart.svg" alt="cart" width="20" height="20">
+            <img src="Images/image-avatar.png" alt="Avatar" width="25" height="25">
+        </div>
+    </header>
+
+    <article class="body">
+        <section class="img">
+            <div class="sneaker">
+        <img class="center" src="Images/image-product-1.jpg" alt="sneaker" width="375" height="300">
+    </div>
+        <div class="Thumbnails">
+            <div class="t"><img src="Images/image-product-1-thumbnail.jpg" alt="thumbnail" width="80" height="80"></div>
+            <div class="t"><img src="Images/image-product-2-thumbnail.jpg" alt="thumbnail" width="80" height="80">
+            </div>
+            <div class="t"><img src="Images/image-product-3-thumbnail.jpg" alt="thumbnail" width="80" height="80"></div>
+            <div class="t"><img src="Images/image-product-4-thumbnail.jpg" alt="thumbnail" width="80" height="80"></div>
+        </div>
+    </section>
+        <section class="text">
+            <h3>SNEAKER COMPANY</h3>
+            <h1>Fall Limited Edition Sneakers</h1>
+            <div data-aos="fade-right">
+            <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.</p>
+        </div>
+            <div class="price">
+            <h2>$125.00</h2>
+            <h5>50%</h5>
+            <h4>$250.00</h4>
+        </div>
+            <div class="function_buttons">
+                <div class="add">
+                    <button class="button2">-</button>
+                    <p class="zero">0</p>
+                    <button class="button3">+</button>
+                    </div>
+                </div>
+                <div class="button_center">
+                <button class="button1"><i class="fa-thin fa-cart-shopping"></i>Add to cart</button>
+            </div>
+            </div>
+        </div>
+        </section> 
+    </article>
+</body>
+</html>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration:1500,
+    })
+</script>

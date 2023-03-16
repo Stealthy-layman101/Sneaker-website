@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 16px;
+    background-image: radial-gradient(whitesmoke,hsl(26, 100%, 55%));
+}
+
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    column-gap: 2rem;
+}
+
+.head .logo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 2rem;
+}
+
+.Thumbnails{
+    display: none;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    
+}
+
+.text h1{
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.text p{
+    font-weight: 700;
+    color: hsl(219, 9%, 45%);
+}
+
+.price{
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+
+h3{
+    font-size: 1rem;
+}
+
+h3,h5{
+    font-weight: 700;
+    color:  hsl(26, 100%, 55%);
+}
+
+h4{
+    margin-left: 8rem;
+    text-decoration: line-through;
+    color: hsl(219, 9%, 45%);
+}
+
+h5{
+    font-size: 1.1rem;
+    background-color: lightgray;
+    border-radius: 6px;
+    margin-left: 1rem; 
+    width: 11%;
+    height: 10%;
+    
+}
+
+.button1{
+    font-size: 1rem;
+    border-radius: 10px;
+    border-color: hsl(26, 100%, 55%);
+    color: white;
+    background-color: hsl(26, 100%, 55%);
+    width: 22rem;
+    height: 4rem;
+}
+
+.button2, .button3{
+    padding: 1rem;
+    width: 35%;
+    border: solid 1px black;
+    border-radius: 6px;
+    color: hsl(26, 100%, 55%);
+    background-image: radial-gradient(white, hsl(26, 100%, 55%));
+}
+
+.add{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after{
+   background-color: grey;
+   width: 22px;
+   height: 5px;
+   border-radius: 5px;
+   position: absolute;
+   transition: all 0.5s;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+   content: "";
+} 
+
+.menu-icon::before {
+   transform: translateY(-12px);
+}
+
+ .menu-icon::after {
+   transform: translateY(12px);
+}
+ 
+.menu-icon{
+    transform: translateX(-10px);
+}
+
+:is(header:hover, header:focus-within) .menu-icon {
+    background-color: transparent;
+    transform: rotate(720deg); 
+ }
+ 
+ 
+  /*setting transformation and rotation for the menu-icon::before when we hover over header or focus within the header*/
+ :is(header:hover, header:focus-within) .menu-icon::before {
+    transform: translateX(-20px) rotate(45deg);
+ }
+ 
+  /*setting transformation and rotation for the menu-icon::after when we hover over header or focus within the header*/
+ :is(header:hover, header:focus-within) .menu-icon::after {
+    transform: translateX(-20px) rotate(-45deg);
+ }
+ 
+  /*setting display to block for nav when he hover over or focus on header so we can see the nav again*/
+ :is(header:hover, header:focus-within) nav {
+    display: block;
+ }
+
+nav {
+    display: none;
+    animation: showMenu 1s ease-in-out forwards;
+    position: absolute; 
+  }
+
+  
+  @keyframes showMenu {
+    0%{
+       transform: scaleX(-1);
+    }
+ 
+    80%{
+       transform: scaleX(1.2);
+    }
+ 
+    100%{
+       transform: scaleX(1);
+    }
+  }
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    width: 400%;
+    height: 300px;
+    margin-top: 15rem;
+    row-gap: 3rem;
+}
+ 
+nav li {
+    font-size: 1rem;
+    font-weight: 700;
+    display: block;
+    text-align: center;
+}
+
+@media screen and (min-width: 1440px) {
+    body{
+        background-image: radial-gradient(lightgray,hsl(29, 90%, 51%));
+    }
+
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 2px solid hsl(26, 100%, 55%);
+        margin: 4rem;
+        padding-bottom: 1.5rem;
+        align-items: center;
+    }
+
+    .menu-icon{
+        display: none;
+    }
+
+    nav{
+        display: flex; 
+        flex-direction: row;
+        justify-content: center;
+        justify-content: flex-end;
+        animation: returnNav 2s ease-in-out forwards;
+        margin-top: -15rem;
+    } 
+
+    :is(header:hover, header:focus-within) nav {
+        display: none;
+     }
+
+    @keyframes returnNav {
+        0%{
+           transform: scaleX(0);
+        }
+     
+        80%{
+           transform: scaleX(1.2);
+        }
+     
+        100%{
+           transform: scaleX(1);
+        }
+      }
+
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 0%;
+        height: 0%;
+        color: white;
+    } 
+
+    .text{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-content: space-evenly;
+        padding-top: 3rem; 
+        padding-left: 1rem;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .body{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+
+    .Head div{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .Thumbnails{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+
+    .t img{
+        border-radius: 6px;
+    }
+
+    .sneaker img{
+        height: 50%;
+        margin: 2rem 5rem;
+        border-radius: 6px;
+    }
+
+    .price{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .function_buttons{
+        display: flex;
+        flex-direction: row;
+    }
+
+    h5{
+        font-size: 1rem;
+        background-color: lightgray;
+        color: hsl(26, 100%, 55%);
+        border: 5px solid lightgray;
+        border-radius: 6px;
+        text-align: center;
+        height: 100%;
+        width: 15%;
+    }
+
+    .button1{
+        margin-left: 1rem;
+        font-size: 1rem;
+        border-radius: 10px;
+        width: 18rem;
+        height: 3rem;
+    }
+
+    .button2, .button3{
+        font-size: 1rem;
+        border-radius: 5px;
+        background-image: radial-gradient(whitesmoke,hsl(26, 100%, 55%));
+        color: hsl(26, 100%, 55%);
+        width: 10rem;
+        height: 4rem;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (min-height: 1024px){
+    body{
+        background-image: radial-gradient(rgba(245, 245, 245, 0.66),hsla(36, 78%, 47%, 0.884));
+    }
+
+    .sneaker{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .center{
+        width: 55%;
+        height: 20%;
+    }
+
+    .button_center{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+
+ 
+ 
